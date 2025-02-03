@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Pacifico&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f0e8; /* Soft paper-like background */
+    font-family: 'Dancing Script', cursive; /* Handwritten font */
+    text-align: center;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #d4b5a1;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.container::before {
+    content: "💌";
+    font-size: 2rem;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #8b5e3b;
+}
+
+p {
+    font-size: 1.3rem;
+    margin: 15px 0;
+    color: #5a3e2b;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+#yes-btn {
+    background-color: #ff9a8b;
+    color: white;
+}
+
+#yes-btn:hover {
+    background-color: #ff6b6b;
+}
+
+#no-btn {
+    background-color: #6b7280;
+    color: white;
+}
+
+#no-btn:hover {
+    background-color: #374151;
+}
+
+/* Expanding "Yes" Button */
+.expanding {
+    transform: scale(1.2);
+}
+
+/* Making "Yes" Button Fill the Screen */
+.full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+}
