@@ -10,6 +10,7 @@ A cute and interactive way to ask someone out! This web application presents a p
 - Fun animations and transitions
 - Special video message on desktop devices
 - Celebratory page upon acceptance
+- Response tracking through Google Forms integration 📊
 
 ## Technical Details 🛠️
 
@@ -53,6 +54,10 @@ A cute and interactive way to ask someone out! This web application presents a p
    - `cat.gif` for the celebration page
    - `Don't be rash.mp4` for the video message
    - Audio file for the celebration page
+3. Set up Google Form:
+   - Create a new Google Form
+   - Add response and timestamp fields
+   - Replace form URL and entry IDs in script.js
 
 ## Dependencies 🔧
 

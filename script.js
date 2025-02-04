@@ -64,7 +64,43 @@ noBtn.addEventListener("click", function () {
     }
 });
 
-// When "Yes" is clicked, redirect to another page
+// When "Yes" is clicked, submit to Google Form then redirect
 yesBtn.addEventListener("click", function () {
-    window.location.href = "yes.html"; // Change to your actual page
+    // Create a hidden iframe for the response
+    const iframe = document.createElement('iframe');
+    iframe.name = 'hidden-iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    // Create a hidden form
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://docs.google.com/forms/d/e/1FAIpQLSd3jAAuK9F2ahkAnlKj0YzBxpgQ9dI5BNTvCsfzu1aEwJWbcw/formResponse';
+    form.target = 'hidden-iframe';  // Target the hidden iframe
+    form.style.display = 'none';
+
+    // Create and append form inputs for "Would you go on a date with me?"
+    const responseInput = document.createElement('input');
+    responseInput.type = 'text';
+    responseInput.name = 'entry.1553765347';
+    responseInput.value = 'YES';
+    form.appendChild(responseInput);
+
+    // Create and append form inputs for Time
+    const timeInput = document.createElement('input');
+    timeInput.type = 'text';
+    timeInput.name = 'entry.1530883291';
+    timeInput.value = new Date().toLocaleTimeString();
+    form.appendChild(timeInput);
+
+    // Append form to body and submit
+    document.body.appendChild(form);
+    form.submit();
+    
+    // Remove form and iframe, then redirect
+    setTimeout(() => {
+        document.body.removeChild(form);
+        document.body.removeChild(iframe);
+        window.location.href = "yes.html";
+    }, 1000);
 });
