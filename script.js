@@ -62,6 +62,29 @@ noBtn.addEventListener("click", function () {
         yesBtn.style.fontSize = "5rem";
         yesBtn.textContent = "YES";
     }
+
+    // Send the "No" response to Formspree
+    const formData = new FormData();
+    formData.append('entry.1553765347', 'NO');
+    formData.append('entry.1530883291', new Date().toLocaleTimeString());
+
+    fetch('https://formspree.io/f/xwpvbzgp', { // Replace with your Formspree endpoint
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log("No response submitted successfully."); // Debugging log
+        } else {
+            console.error("No response submission failed."); // Debugging log
+        }
+    })
+    .catch(error => {
+        console.error("Error submitting no response:", error); // Debugging log
+    });
 });
 
 // When "Yes" is clicked, submit to Google Form then redirect
