@@ -60,7 +60,7 @@ noBtn.addEventListener("click", function () {
         yesBtn.style.width = "100vw";
         yesBtn.style.height = "100vh";
         yesBtn.style.fontSize = "5rem";
-        yesBtn.textContent = "YOU GOT NO CHOICE NOW";
+        yesBtn.textContent = "YES";
     }
 });
 
